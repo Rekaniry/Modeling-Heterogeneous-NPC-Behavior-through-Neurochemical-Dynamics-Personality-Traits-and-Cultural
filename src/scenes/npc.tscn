@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://bv1hweuf8brew"]
+
+[ext_resource type="Script" uid="uid://cq0bstl0f2cgt" path="res://scripts/npc.gd" id="1_nh2m4"]
+[ext_resource type="Texture2D" uid="uid://cj6dmo0pxya1m" path="res://images/NPC Criança 2.png" id="2_abqhh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv78h"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n8xq"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wlns"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl2vt"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwkja"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tygy"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sptji"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4e37"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h837"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(64, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl1un"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(0, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuru7"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(32, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyaq3"]
+atlas = ExtResource("2_abqhh")
+region = Rect2(64, 144, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf2ql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv78h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n8xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wlns")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl2vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwkja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tygy")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sptji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4e37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h837")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl1un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuru7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyaq3")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqhh"]
+size = Vector2(34, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abqhh"]
+radius = 200.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv78h"]
+radius = 30.0
+
+[node name="NPC" type="CharacterBody2D" unique_id=567678033]
+script = ExtResource("1_nh2m4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=432316713]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yf2ql")
+animation = &"walk_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640412706]
+position = Vector2(0, 33)
+shape = SubResource("RectangleShape2D_abqhh")
+
+[node name="DetectionAreaNPCs" type="Area2D" parent="." unique_id=1487538877]
+position = Vector2(0, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionAreaNPCs" unique_id=205871717]
+shape = SubResource("CircleShape2D_abqhh")
+
+[node name="DetectionAreaStimulus" type="Area2D" parent="." unique_id=21329983]
+position = Vector2(0, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionAreaStimulus" unique_id=1331449204]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_rv78h")
+
+[node name="UI_Bars" type="VBoxContainer" parent="." unique_id=891955561]
+modulate = Color(1, 1, 1, 0.5882353)
+offset_left = -50.0
+offset_top = -300.0
+offset_right = 54.0
+offset_bottom = -21.0
+
+[node name="ID_Plutchik" type="Label" parent="UI_Bars" unique_id=846562196]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "ID: 0
+Plutchik: Anticipation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar_Vitality" type="ProgressBar" parent="UI_Bars" unique_id=491050453]
+custom_minimum_size = Vector2(100, 27)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI_Bars/Bar_Vitality" unique_id=1178341542]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 27.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar_NA" type="ProgressBar" parent="UI_Bars" unique_id=1552336021]
+custom_minimum_size = Vector2(100, 27)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI_Bars/Bar_NA" unique_id=1403322787]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 27.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar_DA" type="ProgressBar" parent="UI_Bars" unique_id=18366778]
+custom_minimum_size = Vector2(100, 27)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI_Bars/Bar_DA" unique_id=364104176]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 27.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar_5HT" type="ProgressBar" parent="UI_Bars" unique_id=1674663516]
+custom_minimum_size = Vector2(100, 27)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI_Bars/Bar_5HT" unique_id=1708407690]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 27.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar_Hunger" type="ProgressBar" parent="UI_Bars" unique_id=1991775401]
+custom_minimum_size = Vector2(100, 27)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI_Bars/Bar_Hunger" unique_id=986315949]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 27.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar_Energy" type="ProgressBar" parent="UI_Bars" unique_id=385604498]
+custom_minimum_size = Vector2(100, 27)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI_Bars/Bar_Energy" unique_id=1736036183]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 27.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar_Social" type="ProgressBar" parent="UI_Bars" unique_id=1263621962]
+custom_minimum_size = Vector2(100, 27)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI_Bars/Bar_Social" unique_id=1716246499]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 27.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar_Safety" type="ProgressBar" parent="UI_Bars" unique_id=1789665711]
+custom_minimum_size = Vector2(100, 27)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI_Bars/Bar_Safety" unique_id=1170129835]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 27.0
+horizontal_alignment = 1
+vertical_alignment = 1

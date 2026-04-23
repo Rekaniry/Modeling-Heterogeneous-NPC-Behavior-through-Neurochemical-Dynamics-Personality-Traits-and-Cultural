@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c3qi16m2k0krr"]
+
+[ext_resource type="Texture2D" uid="uid://h54ixfdxrdic" path="res://images/StimulusZone.png" id="1_66ta4"]
+[ext_resource type="Script" uid="uid://brd3cx5k7gmp3" path="res://scripts/stimulus_zone.gd" id="1_j6gpk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_66ta4"]
+radius = 55.0
+
+[node name="StimulusZone" type="Area2D" unique_id=174216125]
+script = ExtResource("1_j6gpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=603592277]
+modulate = Color(1, 1, 1, 0.5882353)
+scale = Vector2(0.022, 0.022)
+texture = ExtResource("1_66ta4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059571491]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_66ta4")
+
+[node name="UI_Container" type="Control" parent="." unique_id=1300943249]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI_Container" unique_id=1589373119]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -110.0
+offset_right = 100.0
+offset_bottom = -86.99997
+text = "Neutral"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="UI_Container" unique_id=2051694004]
+layout_mode = 0
+offset_left = -54.0
+offset_top = -86.0
+offset_right = 54.0
+offset_bottom = -59.0
+step = 0.001
+
+[node name="InfoButton" type="Button" parent="UI_Container" unique_id=1376623959]
+layout_mode = 0
+offset_left = -15.5
+offset_top = -140.0
+offset_right = 15.5
+offset_bottom = -108.99997
+text = "i"
+
+[node name="InfoPanel" type="Panel" parent="UI_Container" unique_id=734735506]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -106.0
+offset_right = 90.0
+offset_bottom = 114.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_Container/InfoPanel" unique_id=1382197025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://caimn5exnfaky"]
+
+[ext_resource type="Script" uid="uid://d2daquskecqbj" path="res://scripts/simulation_world.gd" id="1_73e7o"]
+[ext_resource type="PackedScene" uid="uid://bv1hweuf8brew" path="res://scenes/npc.tscn" id="2_ef63j"]
+[ext_resource type="PackedScene" uid="uid://c3qi16m2k0krr" path="res://scenes/stimulus_zone.tscn" id="3_fdnve"]
+[ext_resource type="Texture2D" uid="uid://bitawlqqep4j1" path="res://images/recuar_tempo.png" id="3_q02gr"]
+[ext_resource type="Texture2D" uid="uid://b8ps62oun8k2n" path="res://images/avancar_tempo.png" id="3_x7t3p"]
+[ext_resource type="Texture2D" uid="uid://coi0gyffoyi4r" path="res://images/pausa.png" id="6_8f1j6"]
+
+[node name="Simulation World" type="Node2D" unique_id=1305378599]
+script = ExtResource("1_73e7o")
+npc_scene = ExtResource("2_ef63j")
+zone_scene = ExtResource("3_fdnve")
+
+[node name="Timer" type="Timer" parent="." unique_id=1633580503]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1641691050]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1275175978]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.8756056, 0.102000006)
+
+[node name="ClockLabel" type="Label" parent="CanvasLayer" unique_id=1969999482]
+offset_left = 800.0
+offset_top = 10.0
+offset_right = 1120.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 36
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="SpeedButton_Left" type="Button" parent="CanvasLayer" unique_id=983843224]
+offset_left = 895.0
+offset_top = 65.0
+offset_right = 1159.0
+offset_bottom = 329.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("3_q02gr")
+
+[node name="PauseButton" type="Button" parent="CanvasLayer" unique_id=1391847163]
+offset_left = 940.0
+offset_top = 65.0
+offset_right = 1204.0
+offset_bottom = 329.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("6_8f1j6")
+
+[node name="SpeedButton_Right" type="Button" parent="CanvasLayer" unique_id=328549781]
+offset_left = 985.0
+offset_top = 65.0
+offset_right = 1249.0
+offset_bottom = 329.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("3_x7t3p")
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer" unique_id=985375524]
+offset_left = 872.0
+offset_top = 103.0
+offset_right = 1048.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 28
+text = "Velocity: 1.0x"
+vertical_alignment = 1
+
+[node name="Stimulus_Zones" type="Node2D" parent="." unique_id=613378062]
+
+[node name="NPCs" type="Node2D" parent="." unique_id=413085366]

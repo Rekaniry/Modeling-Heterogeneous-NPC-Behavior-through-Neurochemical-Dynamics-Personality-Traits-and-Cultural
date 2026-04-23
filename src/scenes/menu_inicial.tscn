@@ -1,0 +1,487 @@
+[gd_scene format=3 uid="uid://bvmfm3rfc24nm"]
+
+[ext_resource type="Script" uid="uid://daobbqsyoimrw" path="res://scripts/menu_inicial.gd" id="1_40mju"]
+[ext_resource type="Texture2D" uid="uid://ci38110g1trvl" path="res://images/Voltar.png" id="2_1lqws"]
+[ext_resource type="Texture2D" uid="uid://dl0r3cwsj2e21" path="res://images/ICAT.png" id="2_eg8ak"]
+
+[node name="MainMenu" type="Control" unique_id=1332814378]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_40mju")
+
+[node name="Background" type="ColorRect" parent="." unique_id=908997073]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49019608, 0.49019608, 0.49019608, 1)
+
+[node name="ICAT" type="TextureRect" parent="." unique_id=1510707152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 736.0
+offset_right = 1211.0
+offset_bottom = 3097.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_eg8ak")
+
+[node name="ICAD_VisionLab" type="TextureRect" parent="." unique_id=1771712685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 736.0
+offset_right = 1211.0
+offset_bottom = 3097.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_eg8ak")
+
+[node name="PlayButton" type="Button" parent="." unique_id=1402756145]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -128.0
+offset_right = 120.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start test"
+
+[node name="ConfigButton" type="Button" parent="." unique_id=875570152]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -28.0
+offset_right = 120.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Global Parameter Settings"
+
+[node name="QuitButton" type="Button" parent="." unique_id=604948864]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 612.0
+offset_right = 1080.0
+offset_bottom = 668.0
+text = "Quit"
+
+[node name="Note" type="Label" parent="." unique_id=1221582932]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 700.0
+offset_right = 1125.0
+offset_bottom = 830.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Note: Before starting the test, 
+make sure to assign values
+​​to the modulating factors
+in \"Global Parameter Settings\"."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfigPanel" type="Panel" parent="." unique_id=415886504]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -400.0
+offset_right = 320.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="ConfigPanel" unique_id=41151576]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 15.0
+offset_right = 144.0
+offset_bottom = 151.0
+scale = Vector2(0.33, 0.33)
+icon = ExtResource("2_1lqws")
+flat = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ConfigPanel" unique_id=1979129110]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 780.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfigPanel/ScrollContainer" unique_id=532037048]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=363367157]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Configurações globais de parâmetros"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Beta_DA_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1852333562]
+layout_mode = 2
+text = "Beta DA (Homeostase)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Beta_DA_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=582883249]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+
+[node name="Label_Beta_DA_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=561657564]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Beta_5HT_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1890441417]
+layout_mode = 2
+text = "Beta 5-HT (Homeostase)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Beta_5HT_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=583614686]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+
+[node name="Label_Beta_5HT_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=884104606]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Beta_NA_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1364433966]
+layout_mode = 2
+text = "Beta NA (Homeostase)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Beta_NA_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=543797842]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+
+[node name="Label_Beta_NA_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=754705291]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Alpha_DA_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=31426522]
+layout_mode = 2
+text = "Alpha DA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Alpha_DA_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=592072063]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.1
+
+[node name="Label_Alpha_DA_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1486291378]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Alpha_5HT_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=851329678]
+layout_mode = 2
+text = "Alpha 5-HT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Alpha_5HT_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1910919453]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.08
+
+[node name="Label_Alpha_5HT_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=546380631]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.08"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Alpha_NA_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=672843214]
+layout_mode = 2
+text = "Alpha NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Alpha_NA_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1107320769]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.15
+
+[node name="Label_Alpha_NA_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1535770354]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Gamma_DA_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=762353113]
+layout_mode = 2
+text = "Gamma DA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Gamma_DA_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=566961409]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.05
+
+[node name="Label_Gamma_DA_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=473733068]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.05"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Gamma_5HT_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1671996398]
+layout_mode = 2
+text = "Gamma 5-HT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Gamma_5HT_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1045111223]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.03
+
+[node name="Label_Gamma_5HT_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1772620008]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.03"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Gamma_NA_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1570098063]
+layout_mode = 2
+text = "Gamma NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Gamma_NA_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=2044739039]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.07
+
+[node name="Label_Gamma_NA_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=799876006]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.07"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Mod_Openness_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=261287478]
+visible = false
+layout_mode = 2
+text = "Modulação Openess"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Mod_Openness_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=2141234097]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label_Mod_Openness_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=378039546]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Mod_Conscientiousness_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=443935073]
+visible = false
+layout_mode = 2
+text = "Modulação Conscientiousness"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Mod_Conscientiousness_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=567283651]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label_Mod_Conscientiousness_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1467124139]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Mod_Extraversion_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=440184270]
+visible = false
+layout_mode = 2
+text = "Modulação Extraversion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Mod_Extraversion_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1056204723]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label_Mod_Extraversion_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1407365097]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Mod_Agreeableness_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=496507055]
+visible = false
+layout_mode = 2
+text = "Modulação Agreeableness"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Mod_Agreeableness_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1016452586]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label_Mod_Agreeableness_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1245358335]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Mod_Neuroticism_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1811151691]
+visible = false
+layout_mode = 2
+text = "Modulação Neuroticism"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Mod_Neuroticism_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1943813252]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label_Mod_Neuroticism_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=2085463999]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Mod_UAI_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1098465101]
+visible = false
+layout_mode = 2
+text = "Modulação UAI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Mod_UAI_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1407449509]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label_Mod_UAI_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1550331130]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Mod_IDV_Title" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1684332864]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Modulação IDV"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider_Mod_IDV_Value" type="HSlider" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1903839851]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label_Mod_IDV_Value" type="Label" parent="ConfigPanel/ScrollContainer/VBoxContainer" unique_id=1448321995]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ConfigPanel/Button" to="." method="_on_back_button_pressed"]
