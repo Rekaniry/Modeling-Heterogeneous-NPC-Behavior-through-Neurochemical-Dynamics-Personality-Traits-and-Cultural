@@ -22,7 +22,9 @@ Unlike traditional rule-based systems, this model focuses on **Behavioral Hetero
   - `scripts/GlobalSettings.gd`: Configuration for simulation parameters, population generation, and global constants.
   - `scripts/DataCollector.gd`: Utility for exporting high-frequency simulation logs to CSV for statistical analysis.
   - `scenes/`: Godot scenes including the simulation world and NPC instances.
-- `/results`: CSV logs and visual representations (PNGs) of NPC emotional and neurochemical evolution over time (e.g., `TOTAL_LOG_HYBRID_v15`).
+- `/results`: CSV logs and visual representations (PNGs) of NPC evolution.
+  - `TOTAL_LOG_HYBRID_v15.csv`: Raw high-frequency simulation data.
+  - `STATISTICAL_ANALYSIS_v15.csv`: Processed inter-agent variability and trajectory metrics.
 - `Paper_Falcão_SBGames2026.pdf`: Technical paper detailing the methodology and theoretical background.
 
 ## Methodology
@@ -39,6 +41,13 @@ The `/results` folder contains detailed datasets of various simulation runs. The
 - **NTs (Neurotransmitters):** Temporal evolution of Serotonin, Dopamine, and Noradrenaline.
 - **Needs:** Decay and fulfillment rates of psychobiological drives.
 - **Emotions:** Frequency and intensity of emotional states triggered during the simulation.
+
+## Statistical Analysis (v15 Results)
+
+The model was validated against the drive-reduction baseline [Bicalho et al. 2025] over 1,200 simulation steps:
+- **Trajectory Divergence:** High instantaneous divergence ($D \approx 0.337$) even among similar agents due to stochasticity, while maintaining biological profile consistency ($D_{avg} \approx 0.085$).
+- **Emotional Reach:** 42% expansion in state-space occupancy, significantly reducing emotional stagnation.
+- **Behavioral Consistency:** 33% increase in state persistence via **Neurochemical Hysteresis**, eliminating rapid state flickering.
 
 ## Tech Stack
 - **Engine:** Godot Engine 4.6
