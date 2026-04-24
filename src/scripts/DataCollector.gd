@@ -67,7 +67,7 @@ func _capture_data_to_buffer():
 func _save_buffer_to_csv():
 	is_logging = false
 	var mode_suffix = "HYBRID" # PERSONALITY, CULTURE, HYBRID
-	file_path = "user://TOTAL_LOG_%s_v15.csv" % [mode_suffix]
+	file_path = "user://TOTAL_LOG_%s_v16.csv" % [mode_suffix]
 	
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	if file:
